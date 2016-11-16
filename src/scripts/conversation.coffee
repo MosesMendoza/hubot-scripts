@@ -52,10 +52,10 @@ module.exports = (robot) ->
 
 class Listener
   constructor: (@robot, @callback) ->
-    if robot.enableSlash
-      @regex = new RegExp("^(?:\/|#{robot.name}:?)\\s*(.*?)\\s*$", 'i')
+    if @robot.enableSlash
+      @regex = new RegExp("^(?:\/|#{@robot.name}:?)\\s*(.*?)\\s*$", 'i')
     else
-      @regex = new RegExp("^#{robot.name}:?\\s*(.*?)\\s*$", 'i')
+      @regex = new RegExp("^#{@robot.name}:?\\s*(.*?)\\s*$", 'i')
 
     @matcher = (message) =>
       if message.text?
